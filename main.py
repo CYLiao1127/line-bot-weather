@@ -55,7 +55,7 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     elif len(mtext) == 3 and mtext.isdigit():
         try:
-            m = checkincvoicce(int(mtext))
+            m = checkincvoicce(mtext)
             print(m)
             message = TextSendMessage(
                 text=m
