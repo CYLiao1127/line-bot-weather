@@ -73,10 +73,8 @@ def checkincvoicce(n):
     items = list(tree.iter(tag='item'))
     ptext = items[0][2].text
     ptext = ptext.replace('<p>', '').replace('</p>', '\n')
-    temlist = ptext.spilt(':')
-    prizelist = []
-    prizelist.append(temlist[1][5:8])
-    prizelist.append(temlist[5][5:8])
+    temlist = ptext.split('：')
+    prizelist = [temlist[1][5:8], temlist[2][5:8]]
     for i in range(3):
         prizelist.append(temlist[3][9*i+5: 9*i+8])
     sixlist = temlist[4].split('`')
@@ -88,6 +86,7 @@ def checkincvoicce(n):
     else:
         message = '很可惜，未中獎。請輸入下一張發票最後三碼。'
     return message
+
 
 def monoNum(n):
     content = requests.get('https://invoice.etax.nat.gov.tw/invoice.xml')
