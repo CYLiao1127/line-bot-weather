@@ -55,14 +55,16 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     elif len(mtext) == 3 and mtext.isdigit():
         try:
+            m = checkincvoicce(mtext)
+            print(m)
             message = TextSendMessage(
-                text=checkincvoicce(mtext)
+                text=m
             )
             line_bot_api.reply_message(event.reply_token, message)
         except:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='讀取發票發生錯誤！'))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入發跳最後三碼進行對獎！'))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入發票最後三碼進行對獎！'))
 
 
 def checkincvoicce(n):
