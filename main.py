@@ -55,7 +55,7 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
     elif len(mtext) == 3 and mtext.isdigit():
         try:
-            m = checkincvoicce(mtext)
+            m = checkincvoicce(int(mtext))
             print(m)
             message = TextSendMessage(
                 text=m
@@ -78,7 +78,7 @@ def checkincvoicce(n):
     prizelist.append(temlist[1][5:8])
     prizelist.append(temlist[5][5:8])
     for i in range(3):
-        prizelist.append(temlist[3][9*i+5 : 9*i+8])
+        prizelist.append(temlist[3][9*i+5: 9*i+8])
     sixlist = temlist[4].split('`')
     for i in range(len(sixlist)):
         prizelist.append(sixlist[i])
