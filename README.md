@@ -34,7 +34,7 @@
 1. Line-bot Channel secret
    - 打開line-bot，在`Bassic setting`裡，找到 `Channel secret
    <p align="center">
-     <img width=900 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/access.png" alt="Channel secret">
+     <img width=900 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/Channel_access.png" alt="Channel secret">
    </p>
    
     - 將 `User Channel access token` 改成自己的 `Channel secret`
@@ -43,7 +43,7 @@
 2. Line-bot Channel secret
    - 打開line-bot，在`Messaging API`裡，找到 `Channel Access Token`
    <p align="center">
-     <img width=900 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/secret.png" alt="Channel Access Token">
+     <img width=900 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/Channel_secret.png" alt="Channel Access Token">
    </p>
    
     - 將 `User Channel secret` 改成自己的 `Channel Access Token`
