@@ -33,7 +33,7 @@ cities = ['基隆市', '嘉義市', '臺北市', '嘉義縣', '新北市', '臺�
 
 
 def get_weather(city):
-    weather_token = 'YourOwnToken'  # From https://opendata.cwb.gov.tw/
+    weather_token = 'WeatherToken'  # From https://opendata.cwb.gov.tw/
     url = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=' + weather_token + '&format=JSON&locationName=' + str(
         city)
     weather_data = requests.get(url)
@@ -46,7 +46,7 @@ def get_weather(city):
 
 
 def get_air_quality(city):
-    quality_token = 'YourOwnToken'  # From https://data.epa.gov.tw/
+    quality_token = 'QualityToken'  # From https://data.epa.gov.tw/
     url = "https://data.epa.gov.tw/api/v1/aqx_p_432?api_key=" + token + "&format=csv"
 
     df = pd.read_csv(url, encoding="utf-8")
