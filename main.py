@@ -52,33 +52,28 @@ def get_air_quality(city):
     url = "https://data.epa.gov.tw/api/v1/aqx_p_432?api_key=" + token + "&format=csv"
 
     df = pd.read_csv(url, encoding="utf-8")
-    # df = pd.read_csv("aqx_p_432_20210619133036.csv", encoding="utf-8")
-    # df = pd.read_csv("test.csv", encoding="utf-8")
-    public_time = df["PublishTime"][1]
-    df = pd.DataFrame(data=df, columns=["County", "AQI", "PM2.5", "PM10", "O3", "O3_8hr"])
-    df = df[df["County"] == city]
-    df[["AQI", "PM2.5", "PM10", "O3", "O3_8hr"]] = df[["AQI", "PM2.5", "PM10", "O3", "O3_8hr"]].apply(pd.to_numeric,
-                                                                                                      errors='coerce')
-    df = df.mean()
-
-    res = json.load(open('card.json', 'r', encoding='utf-8'))
-    bubble = json.load(open('bubble.json', 'r', encoding='utf-8'))
+    
+    public_time = df["PublishTime"][1]  # 資料時間
+    df = pd.DataFrame(data=df, columns=["County", "AQI", "PM2.5", "PM10", "O3", "O3_8hr"])  # 選取我們要的資料
+    df = df[df["County"] == city]  # 選取城市
+    df[["AQI", "PM2.5", "PM10", "O3", "O3_8hr"]] = df[["AQI", "PM2.5", "PM10", "O3", "O3_8hr"]].apply(pd.to_numeric, errors='coerce')  # 將資料轉成numeric
+    df = df.mean()  # 計算平均值
+    
+    # 空氣品質輸出格式
+    res = json.load(open('./temmplate/card.json', 'r', encoding='utf-8'))
+    bubble = json.load(open('./temmplate/bubble.json', 'r', encoding='utf-8'))
+   
     aqi = round(df["AQI"], 2)
 
     bubble['body']['contents'][0]['text'] = city + '空氣品質'
-
     bubble['body']['contents'][1]['text'] = "資料時間: " + public_time
-
     bubble['body']['contents'][2]['contents'][0]['contents'][1]['text'] = str(round(df["AQI"], 2))
-
     bubble['body']['contents'][2]['contents'][1]['contents'][1]['text'] = str(round(df["PM2.5"], 2))
-
     bubble['body']['contents'][2]['contents'][2]['contents'][1]['text'] = str(round(df["PM10"], 2))
-
     bubble['body']['contents'][2]['contents'][3]['contents'][1]['text'] = str(round(df["O3"], 2))
-
     bubble['body']['contents'][2]['contents'][4]['contents'][1]['text'] = str(round(df["O3_8hr"], 2))
-
+ 
+    #  判斷空氣品質狀況
     if aqi <= 50:
         bubble['body']['contents'][3]['text'] = '空氣品質良好'
         bubble['hero']['url'] = "https://i.imgur.com/owQIOfI.png"
@@ -101,13 +96,6 @@ def get_air_quality(city):
     res['contents'].append(bubble)
 
     return res
-
-
-# @handler.add(MessageEvent)
-# def handle_message(event):
-#     mtext = event.message.text
-#     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=mtext))
-
 
 # Message event
 @handler.add(MessageEvent)
@@ -142,8 +130,10 @@ def handle_message(event):
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text="請先選擇欲查詢項目！"))
 
-
+# 天氣預報輸出格式
 def weather_reply(city, res):
+    
+    # 判斷降雨機率大或小
     for i in range(len(res)):
         rainy_rate = int(res[i][1]['parameter']['parameterName'])
         if rainy_rate <= 30:
