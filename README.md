@@ -4,8 +4,8 @@
 
 可以用於查詢縣市的未來36小時天氣預測與目前的空氣品質狀況。
 <p align="center">
-  <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/weather.gif" alt="Air Quality">
-  <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/qulity.gif" alt="Air Quality">
+  <img width=100 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/weather.gif" alt="Air Quality">
+  <img width=100 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/qulity.gif" alt="Air Quality">
 </p>
 
 ## Prerequisites
