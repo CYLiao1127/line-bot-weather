@@ -103,44 +103,44 @@ def get_air_quality(city):
     return res
 
 
-@handler.add(MessageEvent)
-def handle_message(event):
-    mtext = event.message.text
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=mtext))
+# @handler.add(MessageEvent)
+# def handle_message(event):
+#     mtext = event.message.text
+#     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=mtext))
 
 
 # Message event
-# @handler.add(MessageEvent)
-# def handle_message(event):
-#     global last_message
-#     mtext = event.message.text
-#     if mtext == '@查詢天氣':
-#         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入欲查詢縣市！'))
-#         last_message = "weather"
-#     elif mtext == '@查詢空氣品質':
-#         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入欲查詢縣市！'))
-#         last_message = "quality"
-#     elif last_message == "weather":
-#         if not (mtext.replace('台', '臺') in cities):
-#             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入縣市！'))
-#         else:
-#             city = mtext
-#             city = city.replace('台', '臺')  # 若使用者輸入「台」，則改成「臺」
-#             res = get_weather(city)
-#             return_message = weather_reply(city, res)
-#             line_bot_api.reply_message(event.reply_token, return_message)
-#             last_message = " "
-#     elif last_message == "quality":
-#         if not (mtext.replace('台', '臺') in cities):
-#             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入縣市！'))
-#         else:
-#             city = mtext
-#             city = city.replace('台', '臺')  # 若使用者輸入「台」，則改成「臺」
-#             res = get_air_quality(city)
-#             line_bot_api.reply_message(event.reply_token, FlexSendMessage(city + '空氣品質', res))
-#             last_message = " "
-#     else:
-#         line_bot_api.reply_message(event.reply_token, TextSendMessage(text="請先選擇欲查詢項目！"))
+@handler.add(MessageEvent)
+def handle_message(event):
+    global last_message
+    mtext = event.message.text
+    if mtext == '@查詢天氣':
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入欲查詢縣市！'))
+        last_message = "weather"
+    elif mtext == '@查詢空氣品質':
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入欲查詢縣市！'))
+        last_message = "quality"
+    elif last_message == "weather":
+        if not (mtext.replace('台', '臺') in cities):
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入縣市！'))
+        else:
+            city = mtext
+            city = city.replace('台', '臺')  # 若使用者輸入「台」，則改成「臺」
+            res = get_weather(city)
+            return_message = weather_reply(city, res)
+            line_bot_api.reply_message(event.reply_token, return_message)
+            last_message = " "
+    elif last_message == "quality":
+        if not (mtext.replace('台', '臺') in cities):
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='請輸入縣市！'))
+        else:
+            city = mtext
+            city = city.replace('台', '臺')  # 若使用者輸入「台」，則改成「臺」
+            res = get_air_quality(city)
+            line_bot_api.reply_message(event.reply_token, FlexSendMessage(city + '空氣品質', res))
+            last_message = " "
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="請先選擇欲查詢項目！"))
 
 
 def weather_reply(city, res):
