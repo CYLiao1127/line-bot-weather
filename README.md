@@ -29,7 +29,7 @@
         conda activate open-platform
         conda install -r requirements.txt
         ```
-  
+   https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#18
   ### Starting line-bot
   
   
