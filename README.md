@@ -97,13 +97,10 @@
 2. 設定Webhook URL
    1. 打開line-bot，在`Messaging API`裡，找到 `Webhook setting`，點擊`Edit`鈕更改值。
    2. 將取得的 `Webhook URL` 貼到 `Webhook URL`欄位中，並在後面將上 `/callback` ，例如：
-      ```
-      https://open-platform.herokuapp.com/callback
-      ```
+      `https://open-platform.herokuapp.com/callback`
    4. 點擊`update`鈕。
    5. 點擊`Verify`鈕。
    6. 將 `Use webhook` 更改為「啟用」。
    <p align="center">
-       <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/verify.png" alt="Heroku">
+      <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/verify.png" alt="verify">
    </p>
-   
