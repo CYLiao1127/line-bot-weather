@@ -1,0 +1,172 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://i.imgur.com/owQIOfI.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "https://airtw.epa.gov.tw/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "action": {
+      "type": "uri",
+      "uri": "https://airtw.epa.gov.tw/"
+    },
+    "contents": [
+      {
+        "type": "text",
+        "text": "空氣品質",
+        "size": "xl",
+        "weight": "bold",
+        "contents": [
+          {
+            "type": "span",
+            "text": "空氣品質"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "time",
+        "color": "#aaaaaa",
+        "size": "xxs"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "AQI",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "34.5",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "PM2.5",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "10.3",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "PM10",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "20.6",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "O3",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "24.0",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "O3(8hr)",
+                "weight": "bold",
+                "margin": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "size": "sm",
+                "align": "end",
+                "color": "#aaaaaa",
+                "text": "37.5"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "空氣品質良好",
+        "color": "#aaaaaa",
+        "size": "lg"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#905c44",
+        "action": {
+          "type": "uri",
+          "label": "詳細內容",
+          "uri": "https://airtw.epa.gov.tw/"
+        }
+      }
+    ]
+  }
+}
