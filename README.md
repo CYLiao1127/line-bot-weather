@@ -20,6 +20,8 @@
 ## Getting Started
 
   ### bulid line-bot
+  * 照著<p>line-bot建立步驟<a href="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/build_Line-bot.pdf" title="Title">
+an example</a> inline link.</p>
   
   ### Installation
    * 建立一個虛擬環境:
