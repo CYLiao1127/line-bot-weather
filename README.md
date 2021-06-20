@@ -24,15 +24,15 @@
   
 ### Installation
 - 建立一個虛擬環境:
-  ``` python
-  conda create --name open-platform python=3.8
-  conda activate open-platform
-  pip install -r requirements.txt
+  ``` bash
+  $ conda create --name open-platform python=3.8
+  $ conda activate open-platform
+  $ pip install -r requirements.txt
   ```
   
 ### Fill in own api
 1. Line-bot Channel secret
-   - 打開line-bot，在`Bassic setting`裡，找到Channel secret
+   - 打開line-bot，在`Bassic setting`裡，找到 `Channel secret
    <p align="center">
      <img width=900 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/access.png" alt="Channel secret">
    </p>
@@ -62,5 +62,34 @@
       - https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#L49
 
 ### Starting line-bot
-
-
+1. 取得Webhook URL
+   這邊有兩種方式，分別是透過ngrok與透過Heroku
+   1. ngrok
+      1. 下載<a href="https://ngrok.com/download" title="Title">ngrok</a>。
+      2. 解壓縮檔案後將 `ngrok.exe` 放到與 `main.py` 同一資料夾。
+      3. 進入虛擬環境 `conda activate open-platform`。
+      4. 執行程式 `python main.py`。
+      5. 另外開一個命令提示字元，輸入 `ngrok http 5000`，取得Webhook URL。
+      <p align="center">
+         <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/ngrok.png" alt="ngrok">
+      </p>
+   2. Heroku
+      1. 到<a href="https://devcenter.heroku.com/" title="Title">Heroku Dev Center</a>註冊帳號。
+      2. 安裝<a href="https://git-scm.com/downloads" title="Title">git</a>。
+      3. 安裝<a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install" title="Title">Heroku CLI</a>。
+      3. 進入虛擬環境 `conda activate open-platform`。
+      4. 輸入 `heroku login` ，登入Heroku。
+      5. 輸入 `heroku create open-platform`，建立一個叫做`open-platform`的應用程式。
+      6. 將cmd路徑切換到專案資料夾下。
+      7. 輸入以下指令：
+         ``` bash
+         $ git init
+         $ heroku git:remote -a open-platform
+         $ git add .
+         $ git commit -am "make it better"
+         $ git push heroku master
+         ```
+      8. 取額Webhook URL。
+      <p align="center">
+         <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/heroku.png" alt="Heroku">
+      </p>
