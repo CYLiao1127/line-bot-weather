@@ -10,11 +10,8 @@ from linebot.models import MessageEvent, TextSendMessage, TemplateSendMessage, C
     URIAction, FlexSendMessage
 import json
 
-line_bot_api = LineBotApi(
-    '0zmy7gyoHsmGkRWXJSVWvyPDeKaqxjcPvxvLXCyp/xo'
-    '/wG77bSEQxAEuND6tBFuFVHBOgnXjSv4nh2t2bTbbGlJWTeXVRYbneZZcd067IXCUzNRmKkbbHg'
-    '+IautAtJlxnXJPDOML2vUXuLQIg4NzEAdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('fa6e04cd13ab3cdf5c74687c13cae05e')
+line_bot_api = LineBotApi('User Channel access token')
+handler = WebhookHandler('User Channel secret')
 last_message = ' '
 
 
@@ -30,12 +27,13 @@ def callback():
     return 'OK'
 
 
+# 紀錄有哪些城市
 cities = ['基隆市', '嘉義市', '臺北市', '嘉義縣', '新北市', '臺南市', '桃園市', '高雄市', '新竹市', '屏東縣', '新竹縣', '臺東縣', '苗栗縣', '花蓮縣', '臺中市',
           '宜蘭縣', '彰化縣', '澎湖縣', '南投縣', '金門縣', '雲林縣', '連江縣']
 
 
 def get_weather(city):
-    token = 'CWB-39044516-A34A-4EFC-B8D6-28132599C10B'
+    token = 'YourOwnToken'  # From https://opendata.cwb.gov.tw/
     url = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=' + token + '&format=JSON&locationName=' + str(
         city)
     weather_data = requests.get(url)
@@ -48,7 +46,7 @@ def get_weather(city):
 
 
 def get_air_quality(city):
-    token = '9be7b239-557b-4c10-9775-78cadfc555e9'
+    token = 'YourOwnToken'  # From https://data.epa.gov.tw/
     url = "https://data.epa.gov.tw/api/v1/aqx_p_432?api_key=" + token + "&format=csv"
 
     df = pd.read_csv(url, encoding="utf-8")
