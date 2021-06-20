@@ -3,6 +3,9 @@
 開放平台軟體期末專題-天氣e定通line-bot
 
 可以用於查詢縣市的未來36小時天氣預測與目前的空氣品質狀況。
+<p align="center">
+  <img width=500 src="https://github.com/bigmms/JumpPhotoshoot/blob/main/img/yolo_jump.gif" alt="JumpPhotoshoot">
+</p>
 
 ## Prerequisites
   * python 3.8.10
