@@ -27,7 +27,7 @@
         ``` python
         conda create --name open-platform python=3.8
         conda activate open-platform
-        conda install -r requirements.txt
+        pip install -r requirements.txt
         ```
    https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#18
   ### Starting line-bot
