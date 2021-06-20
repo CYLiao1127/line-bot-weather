@@ -63,7 +63,7 @@
 
 ### Starting line-bot
 1. 取得Webhook URL
-   這邊有兩種方式，分別是透過ngrok與透過Heroku
+   這邊有兩種方式，兩種可以二選一，分別是透過ngrok與透過Heroku：
    1. ngrok
       1. 下載<a href="https://ngrok.com/download" title="Title">ngrok</a>。
       2. 解壓縮檔案後將 `ngrok.exe` 放到與 `main.py` 同一資料夾。
@@ -89,7 +89,21 @@
          $ git commit -am "make it better"
          $ git push heroku master
          ```
-      8. 取額Webhook URL。
+      8. 取得Webhook URL。
       <p align="center">
          <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/heroku.png" alt="Heroku">
       </p>
+   
+2. 設定Webhook URL
+   1. 打開line-bot，在`Messaging API`裡，找到 `Webhook setting`，點擊`Edit`鈕更改值。
+   2. 將取得的 `Webhook URL` 貼到 `Webhook URL`欄位中，並在後面將上 `/callback` ，例如：
+      ```
+      https://open-platform.herokuapp.com/callback
+      ```
+   4. 點擊`update`鈕。
+   5. 點擊`Verify`鈕。
+   6. 將 `Use webhook` 更改為「啟用」。
+   <p align="center">
+       <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/verify.png" alt="Heroku">
+   </p>
+   
