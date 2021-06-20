@@ -106,3 +106,6 @@
    </p>
 
 ## Reference
+[Day12 LINE BOT & 天氣預報 - 2](https://ithelp.ithome.com.tw/articles/10245154)
+[LINE Messaging API SDK for Python](https://github.com/line/line-bot-sdk-python)
+[Line Bot 教學](https://github.com/yaoandy107/line-bot-tutorial)
