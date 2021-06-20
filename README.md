@@ -1,1 +1,95 @@
-"# line-bot-weather" 
+# line-bot-weather
+
+開放平台軟體期末專題-天氣e定通line-bot
+
+可以用於查詢縣市的未來36小時天氣預測與目前的空氣品質狀況。
+<p align="center">
+    <img width=250 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/all.gif" alt="demo gif">
+</p>
+
+## Prerequisites
+- python 3.8.10
+- Flask 2.0.1
+- gunicorn 20.1.0
+- line-bot-sdk 1.8.0
+- numpy 1.20.3
+- pandas 1.2.4
+- requests 2.25.1
+
+
+## Getting Started
+
+### Bulid line-bot
+- 照著<a href="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/build_Line-bot.pdf" title="Title">line-bot建立步驟</a> 建立一個line-bot
+  
+### Installation
+- 建立一個虛擬環境:
+  ``` bash
+  $ conda create --name open-platform python=3.8
+  $ conda activate open-platform
+  $ pip install -r requirements.txt
+  ```
+  
+### Fill in own api
+1. Line-bot Channel secret
+   - 打開line-bot，在`Bassic setting`裡，找到 `Channel secret
+   <p align="center">
+     <img width=900 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/access.png" alt="Channel secret">
+   </p>
+   
+    - 將 `User Channel access token` 改成自己的 `Channel secret`
+      - https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#L13
+    
+2. Line-bot Channel secret
+   - 打開line-bot，在`Messaging API`裡，找到 `Channel Access Token`
+   <p align="center">
+     <img width=900 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/secret.png" alt="Channel Access Token">
+   </p>
+   
+    - 將 `User Channel secret` 改成自己的 `Channel Access Token`
+      - https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#L14
+    
+3. 氣象局API Key
+   - 到<a href="https://opendata.cwb.gov.tw/" title="Title">氣象資料開放平台</a>申請帳號。
+   - 取得氣象資料開放平台 `API Key`。
+   - 將 `WeatherToken` 改成自己的 `API Key`。
+      - https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#L36
+    
+4. 環保署API Key
+   - 到<a href="https://data.epa.gov.tw/" title="Title">行政院環保署</a>官網申請帳號。
+   - 取得行政院環保署資料開放平台 `API Key`。
+   - 將 `QualityToken` 改成自己的 `API Key`。
+      - https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#L49
+
+### Starting line-bot
+1. 取得Webhook URL
+   這邊有兩種方式，分別是透過ngrok與透過Heroku
+   1. ngrok
+      1. 下載<a href="https://ngrok.com/download" title="Title">ngrok</a>。
+      2. 解壓縮檔案後將 `ngrok.exe` 放到與 `main.py` 同一資料夾。
+      3. 進入虛擬環境 `conda activate open-platform`。
+      4. 執行程式 `python main.py`。
+      5. 另外開一個命令提示字元，輸入 `ngrok http 5000`，取得Webhook URL。
+      <p align="center">
+         <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/ngrok.png" alt="ngrok">
+      </p>
+   2. Heroku
+      1. 到<a href="https://devcenter.heroku.com/" title="Title">Heroku Dev Center</a>註冊帳號。
+      2. 安裝<a href="https://git-scm.com/downloads" title="Title">git</a>。
+      3. 安裝<a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install" title="Title">Heroku CLI</a>。
+      3. 進入虛擬環境 `conda activate open-platform`。
+      4. 輸入 `heroku login` ，登入Heroku。
+      5. 輸入 `heroku create open-platform`，建立一個叫做`open-platform`的應用程式。
+      6. 將cmd路徑切換到專案資料夾下。
+      7. 輸入以下指令：
+         ``` bash
+         $ git init
+         $ heroku git:remote -a open-platform
+         $ git add .
+         $ git commit -am "make it better"
+         $ git push heroku master
+         ```
+      8. 取額Webhook URL。
+      <p align="center">
+         <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/ngrok.png" alt="ngrok">
+      </p>

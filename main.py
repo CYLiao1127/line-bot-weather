@@ -30,13 +30,14 @@ def callback():
     return 'OK'
 
 
+# 紀錄有哪些城市
 cities = ['基隆市', '嘉義市', '臺北市', '嘉義縣', '新北市', '臺南市', '桃園市', '高雄市', '新竹市', '屏東縣', '新竹縣', '臺東縣', '苗栗縣', '花蓮縣', '臺中市',
           '宜蘭縣', '彰化縣', '澎湖縣', '南投縣', '金門縣', '雲林縣', '連江縣']
 
 
 def get_weather(city):
-    token = 'CWB-39044516-A34A-4EFC-B8D6-28132599C10B'
-    url = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=' + token + '&format=JSON&locationName=' + str(
+    weather_token = 'CWB-39044516-A34A-4EFC-B8D6-28132599C10B'  # From https://opendata.cwb.gov.tw/
+    url = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=' + weather_token + '&format=JSON&locationName=' + str(
         city)
     weather_data = requests.get(url)
     weather_data = (json.loads(weather_data.text, encoding='utf-8'))['records']['location'][0]['weatherElement']
@@ -48,37 +49,33 @@ def get_weather(city):
 
 
 def get_air_quality(city):
-    token = '9be7b239-557b-4c10-9775-78cadfc555e9'
+    quality_token = '9be7b239-557b-4c10-9775-78cadfc555e9'  # From https://data.epa.gov.tw/
     url = "https://data.epa.gov.tw/api/v1/aqx_p_432?api_key=" + token + "&format=csv"
 
     df = pd.read_csv(url, encoding="utf-8")
-    # df = pd.read_csv("aqx_p_432_20210619133036.csv", encoding="utf-8")
-    # df = pd.read_csv("test.csv", encoding="utf-8")
-    public_time = df["PublishTime"][1]
-    df = pd.DataFrame(data=df, columns=["County", "AQI", "PM2.5", "PM10", "O3", "O3_8hr"])
-    df = df[df["County"] == city]
-    df[["AQI", "PM2.5", "PM10", "O3", "O3_8hr"]] = df[["AQI", "PM2.5", "PM10", "O3", "O3_8hr"]].apply(pd.to_numeric,
-                                                                                                      errors='coerce')
-    df = df.mean()
 
-    res = json.load(open('card.json', 'r', encoding='utf-8'))
-    bubble = json.load(open('bubble.json', 'r', encoding='utf-8'))
+    public_time = df["PublishTime"][1]  # 資料時間
+    df = pd.DataFrame(data=df, columns=["County", "AQI", "PM2.5", "PM10", "O3", "O3_8hr"])  # 選取我們要的資料
+    df = df[df["County"] == city]  # 選取城市
+    df[["AQI", "PM2.5", "PM10", "O3", "O3_8hr"]] = df[["AQI", "PM2.5", "PM10", "O3", "O3_8hr"]].apply(pd.to_numeric,
+                                                                                                      errors='coerce')  # 將資料轉成numeric
+    df = df.mean()  # 計算平均值
+
+    # 空氣品質輸出格式
+    res = json.load(open('./temmplate/card.json', 'r', encoding='utf-8'))
+    bubble = json.load(open('./temmplate/bubble.json', 'r', encoding='utf-8'))
+
     aqi = round(df["AQI"], 2)
 
     bubble['body']['contents'][0]['text'] = city + '空氣品質'
-
     bubble['body']['contents'][1]['text'] = "資料時間: " + public_time
-
     bubble['body']['contents'][2]['contents'][0]['contents'][1]['text'] = str(round(df["AQI"], 2))
-
     bubble['body']['contents'][2]['contents'][1]['contents'][1]['text'] = str(round(df["PM2.5"], 2))
-
     bubble['body']['contents'][2]['contents'][2]['contents'][1]['text'] = str(round(df["PM10"], 2))
-
     bubble['body']['contents'][2]['contents'][3]['contents'][1]['text'] = str(round(df["O3"], 2))
-
     bubble['body']['contents'][2]['contents'][4]['contents'][1]['text'] = str(round(df["O3_8hr"], 2))
 
+    #  判斷空氣品質狀況
     if aqi <= 50:
         bubble['body']['contents'][3]['text'] = '空氣品質良好'
         bubble['hero']['url'] = "https://i.imgur.com/owQIOfI.png"
@@ -101,12 +98,6 @@ def get_air_quality(city):
     res['contents'].append(bubble)
 
     return res
-
-
-# @handler.add(MessageEvent)
-# def handle_message(event):
-#     mtext = event.message.text
-#     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=mtext))
 
 
 # Message event
@@ -143,7 +134,9 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text="請先選擇欲查詢項目！"))
 
 
+# 天氣預報輸出格式
 def weather_reply(city, res):
+    # 判斷降雨機率大或小
     for i in range(len(res)):
         rainy_rate = int(res[i][1]['parameter']['parameterName'])
         if rainy_rate <= 30:
