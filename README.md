@@ -5,13 +5,13 @@
 可以用於查詢縣市的未來36小時天氣預測與目前的空氣品質狀況。
 
 ## Prerequisites
-  *python 3.8.10
-  *Flask 2.0.1
-  *gunicorn 20.1.0
-  *line-bot-sdk 1.8.0
-  *numpy 1.20.3
-  *pandas 1.2.4
-  *requests 2.25.1
+  * python 3.8.10
+  * Flask 2.0.1
+  * gunicorn 20.1.0
+  * line-bot-sdk 1.8.0
+  * numpy 1.20.3
+  * pandas 1.2.4
+  * requests 2.25.1
 
 
 ## Getting Started
