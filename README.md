@@ -125,7 +125,7 @@
 
 - 天氣預報圖示：將會根據降雨機率高低，更換不同圖示，包括：晴天、陰天、跟雨天三種。
 <p align="center">
-   <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/sunny.png" alt="sunny"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/cloudy.png" alt="cloudy"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/rainy.png" alt="rainy">
+   <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/sunny.png" alt="sunny"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/cloudy.png" alt="cloudy"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/rainy.jpg" alt="rainy">
 </p>
 
 - 空氣品質圖示：將會根據空氣品質指標(AQI)高低，更換不同圖示，包括：空氣品質良好、出門請戴口罩、與盡量不要出門三種。
