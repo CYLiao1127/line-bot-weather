@@ -112,7 +112,15 @@
       <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/verify.png" alt="verify">
    </p>
 
-## Method
+## Result&Demo
+- 未來36小時天氣預報：點選圖文選單中，天氣的部分，並輸入縣市。
+<p align="center">
+   <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/weather_v2.gif" alt="weather">
+</p>
+- 即時空氣品質資訊：點選圖文選單中，空氣的部分，並輸入縣市。
+<p align="center">
+   <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/quality_v2.gif" alt="weather">
+</p>
 
 ## Reference
 [Day12 LINE BOT & 天氣預報 - 2](https://ithelp.ithome.com.tw/articles/10245154)
