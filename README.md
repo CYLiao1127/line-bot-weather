@@ -30,7 +30,7 @@
   $ pip install -r requirements.txt
   ```
   
-### Fill in own api
+### Fill in own API
 1. Line-bot Channel secret
    - 打開line-bot，在`Bassic setting`裡，找到 `Channel secret
    <p align="center">
