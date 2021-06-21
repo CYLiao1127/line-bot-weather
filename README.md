@@ -1,6 +1,9 @@
 # line-bot-weather
-
 開放平台軟體期末專題-天氣e定通line-bot
+
+## Introduction
+天氣跟空氣品質對於我們日常生活的重要秀無庸置疑，我們總是會想知道天氣狀況來決定出門是否需要帶傘，需不需要多帶件外套，或是需不需要擦防曬油、戴一副墨鏡出門等等，不僅如此，近年來由於空氣汙染嚴重，越來越多人會有過敏的情況發生，若是長期待在空氣不好的戶外空間，對身體更是一大傷害，因此，口罩也是一大必需品之一。
+在現今說到要查看天氣狀況與空氣品質，我們總是會想到鎖定某個時段的新聞天氣預報、或是google查詢天氣、與空氣狀況，不過，這些效果都不是太好...
 
 可以用於查詢縣市的未來36小時天氣預測與目前的空氣品質狀況。
 <p align="center">
@@ -104,6 +107,8 @@
    <p align="center">
       <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/verify.png" alt="verify">
    </p>
+
+## Method
 
 ## Reference
 [Day12 LINE BOT & 天氣預報 - 2](https://ithelp.ithome.com.tw/articles/10245154)
