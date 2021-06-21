@@ -113,16 +113,6 @@
    </p>
 
 ## Result&Demo
-- 未來36小時天氣預報：點選圖文選單中，天氣的部分，並輸入縣市。
-<p align="center">
-   <img width=250 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/weather_v2.gif" alt="weather">
-</p>
-
-- 即時空氣品質資訊：點選圖文選單中，空氣的部分，並輸入縣市。
-<p align="center">
-   <img width=250 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/quality_v2.gif" alt="weather">
-</p>
-
 - 天氣預報圖示：將會根據降雨機率高低，更換不同圖示，包括：晴天、陰天、跟雨天三種。
 <p align="center">
    <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/sunny.png" alt="sunny"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/cloudy.png" alt="cloudy"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/rainy2.jpg" alt="rainy">
@@ -131,6 +121,16 @@
 - 空氣品質圖示：將會根據空氣品質指標(AQI)高低，更換不同圖示，包括：空氣品質良好、出門請戴口罩、與盡量不要出門三種。
 <p align="center">
    <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/safe.png" alt="空氣品質良好"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/mask.png" alt="出門請戴口罩"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/dont.png" alt="盡量不要出門">
+</p>
+
+- 未來36小時天氣預報：點選圖文選單中，天氣的部分，並輸入縣市。
+<p align="center">
+   <img width=250 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/weather_v2.gif" alt="weather">
+</p>
+
+- 即時空氣品質資訊：點選圖文選單中，空氣的部分，並輸入縣市。
+<p align="center">
+   <img width=250 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/quality_v2.gif" alt="weather">
 </p>
 
 ## Reference
