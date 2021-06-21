@@ -8,7 +8,7 @@
 ## Introduction
 天氣e定通line-bot 功能有三，
 1. 一個簡單查詢的line聊天機器人。
-2. 透過串接氣象資料開放平台API，查詢縣市的未來36小時天氣預測
+2. 透過串接氣象資料開放平台API，查詢縣市的未來36小時天氣預測。
 2. 透過串接環保署資料開放平台API，查詢縣市的目前的空氣品質狀況。
 <p align="center">
     <img width=250 src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/all.gif" alt="demo gif">
