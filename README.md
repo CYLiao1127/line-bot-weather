@@ -115,7 +115,7 @@
 ## Result&Demo
 - 天氣預報圖示：將會根據降雨機率高低，更換不同圖示，包括：晴天、陰天、跟雨天三種。
 <p align="center">
-   <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/sunny.png" alt="sunny"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/cloudy.png" alt="cloudy"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/rainy2.jpg" alt="rainy">
+   <img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/sunny.png" alt="sunny"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/cloudy2.png" alt="cloudy"><img src="https://github.com/CYLiao1127/line-bot-weather/blob/master/ref/rainy.jpg" alt="rainy">
 </p>
 
 - 未來36小時天氣預報：點選圖文選單中，天氣的部分，並輸入縣市。
