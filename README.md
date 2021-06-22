@@ -60,13 +60,13 @@
    - 到<a href="https://opendata.cwb.gov.tw/" title="Title">氣象資料開放平台</a>申請帳號。
    - 取得氣象資料開放平台 `API Key`。
    - 將 `main.py` 中第36行的 `WeatherToken` 改成自己的 `API Key`。
-      - https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#L36
+      - https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#L43
     
 4. 環保署API Key
    - 到<a href="https://data.epa.gov.tw/" title="Title">行政院環保署</a>官網申請帳號。
    - 取得行政院環保署資料開放平台 `API Key`。
    - 將 `main.py` 中第49行的 `QualityToken` 改成自己的 `API Key`。
-      - https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#L49
+      - https://github.com/CYLiao1127/line-bot-weather/blob/master/main.py#L63
 
 ### Starting line-bot
 1. 取得Webhook URL
