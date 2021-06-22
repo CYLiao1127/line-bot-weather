@@ -139,3 +139,9 @@
 [LINE Messaging API SDK for Python](https://github.com/line/line-bot-sdk-python)
 
 [Line Bot 教學](https://github.com/yaoandy107/line-bot-tutorial)
+
+[[Python Linebot]教你如何使用Python成功串接Linebot(2020版)](https://ithelp.ithome.com.tw/articles/10229943)
+
+[【ngrok 教學】 webhook 直接在本地端測起來，Debug沒煩惱！](https://learn.markteaching.com/ngrok-webhook/)
+
+[《Line Bot教學》用 Heroku、Python 建立自己的 Line Bot](https://cruelshare.com/line-bot-second/)
