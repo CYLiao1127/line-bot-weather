@@ -74,22 +74,23 @@ def get_air_quality(city):
     #  判斷空氣品質狀況
     if aqi <= 50:
         bubble['body']['contents'][3]['text'] = '空氣品質良好'
-        bubble['hero']['url'] = "https://i.imgur.com/owQIOfI.png"
+        bubble['hero']['url'] = "https://i.imgur.com/WflHpXo.png"
     elif aqi <= 100:
         bubble['body']['contents'][3]['text'] = '空氣品質正常'
-        bubble['hero']['url'] = "https://i.imgur.com/owQIOfI.png"
+        bubble['hero']['url'] = "https://i.imgur.com/WflHpXo.png"
     elif aqi <= 150:
         bubble['body']['contents'][3]['text'] = '敏感族群注意'
-        bubble['hero']['url'] = "https://i.imgur.com/IJxyMd3.png"
+        bubble['hero']['url'] = "https://i.imgur.com/Hel2tvh.png"
     elif aqi <= 200:
         bubble['body']['contents'][3]['text'] = '所有人員注意'
-        bubble['hero']['url'] = "https://i.imgur.com/IJxyMd3.png"
+        bubble['hero']['url'] = "https://i.imgur.com/Hel2tvh.png"
     elif aqi <= 300:
         bubble['body']['contents'][3]['text'] = '非常不健康'
-        bubble['hero']['url'] = "https://i.imgur.com/9CXBRiD.png"
+        bubble['hero']['url'] = "https://i.imgur.com/QecWI3e.png"
     else:
         bubble['body']['contents'][3]['text'] = '千千萬萬不要出門'
-        bubble['hero']['url'] = "https://i.imgur.com/9CXBRiD.png"
+        bubble['hero']['url'] = "https://i.imgur.com/QecWI3e.png"
+
 
     res['contents'].append(bubble)
 
