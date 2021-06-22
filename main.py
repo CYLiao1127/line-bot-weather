@@ -136,11 +136,11 @@ def weather_reply(city, res):
     for i in range(len(res)):
         rainy_rate = int(res[i][1]['parameter']['parameterName'])
         if rainy_rate <= 30:
-            res[i].append("https://i.imgur.com/oDxY4Jz.png")
+            res[i].append("https://i.imgur.com/b6aTCiw.png")
         elif rainy_rate <= 70:
-            res[i].append("https://i.imgur.com/7AqxoKN.png")
+            res[i].append("https://i.imgur.com/Zsr9ec6.png")
         else:
-            res[i].append("https://i.imgur.com/WxZ5sMi.jpg")
+            res[i].append("https://i.imgur.com/PO9TUMX.png")
 
     return TemplateSendMessage(
         alt_text=city + '未來 36 小時天氣預測',
